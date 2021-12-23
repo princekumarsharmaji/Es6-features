@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6</title>
+</head>
+<body>
+    <script>
+        // Default parameters
+        function talk(msg = "Hi"){
+               console.log(msg)
+        }
+        talk()
+
+         //Rest parameters (...args)
+         function sum (...args){
+          let result = 0;
+            for(let i=0; i<args.length; i++){
+                result += args[i];
+                
+            }
+              console.log (result);
+        }
+        sum(5,8,4,4)
+        sum(6,7,4) 
+
+        // Sprad operator (...)
+        let array1 = [1,2,3]
+        let array2 = [4,5,6,...array1]
+        let array3 = [...array1,...array2]
+        console.log(array3) 
+
+        //for of loop
+           let score = "hello prince"
+
+           for(let x of score){
+               console.log(x)
+           } 
+
+          //template Literals (use for multiple line string)
+          let str =  `hello
+         prince 
+                     sharma`
+         console.log(str);
+
+         let name = "PrinceSharma"
+         console.log(`My name is ${name}.I love my name.`) 
+
+         // ARRAY destructuring
+
+          let book = ["Leader mind", "Tim crook", 45, [200, 70]];
+         let[Bookname, Authorname, Price, Pages ] = book;
+         console.log(Pages) 
+
+         // OBJECT destructring
+         let books = {
+             name: "Mindful-leader",
+             price: 45,
+             pages: 200,
+         }
+         let{name : title,price,pages} = books;
+         console.log(title) 
+
+         // Constructor function
+
+         function Person(first, last, age){
+             this.firstName = first,
+             this.lastName = last,
+             this.age = age,
+             function changeage(age){
+                 this.age = age
+             }
+
+         }
+         let person1 = new Person("Prince","kumar", 24 )
+         person1.changeage = 22;
+         let person2 = new Person ("Smriti", "bhandar", 23)
+         console.log(person1)
+
+         // ARROW function
+
+         let changeButton = (e) => {
+             return e
+         }
+
+         // Class
+
+         class Student {
+             constructor(n,a){
+                this.name = n,
+                this.age = a
+             }
+         }
+
+         let student1 = new Student("prince", 24);
+         console.log(student1)
+
+         class Emp {
+             constructor(n){
+                 this.name  = n
+                  }
+         }
+         class manager extends Emp {
+             constructor(n,d){
+                 super(n);
+                 this.department =d
+             }
+
+         }
+
+          let mng1 = new manager("prince", "web-development")
+
+          console.log(mng1)
+        
+     </script>
+    
+</body>
+</html>
